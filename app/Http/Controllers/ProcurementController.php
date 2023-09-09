@@ -2,64 +2,53 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\procurement;
 use Illuminate\Http\Request;
+use App\Models\Procurement;
 
 class ProcurementController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $procurements = Procurement::all();
+        return view('procurements.index', compact('procurements'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('procurements.create');
+        // Menampilkan form pembuatan pengadaan
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+                // Validasi input
+                $request->validate([
+                    'id'=>'required',
+                    'item_id'=> 'required',
+                    'order_quantity'=> 'required',
+                    'total_cost'=> 'required',
+                    'procurement_date'=> 'required',
+                    // Tambahkan validasi lainnya sesuai kebutuhan
+                ]);
+        
+                // Simpan pengadaan baru
+                Procurement::create(
+                    $request->all()
+                    // Simpan atribut lain sesuai kebutuhan
+                );
+        
+                // Redirect ke halaman yang sesuai setelah penyimpanan berhasil
+                return redirect()->route('procurements.index')
+                    ->with('success', 'Pengadaan berhasil ditambahkan');
+        
+        // Proses menyimpan pengadaan baru
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(procurement $procurement)
+    public function show($id)
     {
-        //
+        $procurement = Procurement::findOrFail($id);
+        return view('procurements.show', compact('procurement'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(procurement $procurement)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, procurement $procurement)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(procurement $procurement)
-    {
-        //
-    }
+    // Dan lain-lain
 }
