@@ -34,7 +34,7 @@
                                     ,20,'...') }}</td>
                                 <td class="px-6 py-3 border dark:border-black">
                                     <a href="/items-edit-{{ $item->id }}"
-                                        class="flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 mx-2  rounded mb-1">
+                                        class="flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 mx-1 rounded mb-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                                             <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                             <path
