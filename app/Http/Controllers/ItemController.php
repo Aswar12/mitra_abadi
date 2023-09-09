@@ -2,65 +2,82 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\item;
+use App\Models\Item;
+
+
+
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $items = Item::all();
         return view('items.index', compact('items'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
+    // Menampilkan formulir tambah item
     public function create()
     {
-        //
+        $items = Item::all();
+        return view('items.create', compact('items'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Menyimpan item baru
     public function store(Request $request)
     {
-        //
+        // Validasi input
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'unit_price' => 'required|numeric',
+            'demand_rate' => 'required|numeric',
+            'ordering_cost' => 'required|numeric',
+            'holding_cost' => 'required|numeric',
+        ]);
+
+        // Simpan item baru
+        Item::create($request->all());
+
+
+
+        return redirect('/items')->with('success', 'Item berhasil ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(item $item)
+    // Menampilkan detail item
+    public function show(Item $item)
     {
-        //
+        return view('items.show', compact('item'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(item $item)
+    // Menampilkan formulir edit item
+    public function edit(Item $item)
     {
-        //
+        return view('items.edit', compact('item'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, item $item)
+    // Mengupdate item
+    public function update(Request $request, Item $item)
     {
-        //
+        // Validasi input
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'unit_price' => 'required|numeric',
+            'demand_rate' => 'required|numeric',
+            'ordering_cost' => 'required|numeric',
+            'holding_cost' => 'required|numeric',
+        ]);
+
+        // Update item
+        $item->update($request->all());
+
+        return redirect('/items')->with('success', 'Item berhasil diperbarui');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(item $item)
+    // Menghapus item
+    public function destroy(Item $item)
     {
-        //
+        $item->delete();
+        return redirect('/items')->with('success', 'Item berhasil dihapus');
     }
 }
