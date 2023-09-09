@@ -13,9 +13,9 @@ class ItemController extends Controller
     public function index()
     {
         // pengambilan data dari database menggunakan paginate
-        $items = Item::paginate(5);
+        $items = Item::paginate(10);
         return view('items.index', compact('items'));
-        // $items = Item::all()->paginate(10);
+
         // return view('items.index', compact('items'));
     }
     // Menampilkan formulir tambah item
