@@ -1,6 +1,6 @@
 <div
-    class=" bg-gray-800  h-full mt-16 px-4 w-48 flex left-0 top-0 text-white border-b border-gray-100 dark:border-gray-700 rounded-2xl">
-    <ul class="space-y-4 h-auto ">
+    class=" bg-gray-800  h-full mt-16 px-4 w-48 flex left-0 top-0 text-white border-b border-gray-100 dark:border-gray-700 ">
+    <ul class="space-y-4 h-auto pt-8 ">
         <!-- Menu Navigasi -->
         <li>
             <a href="{{ route('dashboard') }}"

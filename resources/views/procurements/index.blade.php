@@ -1,18 +1,4 @@
-@extends('layouts.app')
-@section('content')
-
-<h6>Daftar Pengadaan</h6>
-
-<div class="py-12 ">
-    <div class="mx-auto max-w-7xl sm:px-6 lg:px-4 dark:bg-gray-500">
-        <div class="overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-500 sm:rounded-lg ">
-            <h1 class="py-2 mb-2 text-lg font-bold text-center">Daftar Pengadaan</h1>
-            {{-- //buatkan tombol tambah data --}}
-            <div class="flex justify-end px-4 py-3 text-right sm:px-6">
-                <a href="/procurement-create" class="px-4 py-2 font-bold text-white bg-black rounded">Tambah Data</a>
-            </div>
-<div class="py-12 ">
-    
+<x-app-layout>
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-4 dark:bg-gray-500">
         <div class="bg-white dark:bg-gray-500 overflow-hidden shadow-xl sm:rounded-lg rounded-lg ">
             <h1 class="text-center text-lg font-bold mb-2 py-2">Daftar Pengadaan</h1>
@@ -38,7 +24,7 @@
                             <td class="border px-6 py-3 dark:border-white">{{ $procurement->total_cost }}</td>
                             <td class="border px-6 py-3 dark:border-white">{{ $procurement->procurement_date }}</td>
                             <td>
-                            <a href="/procurements-edit-{{ $procurement->id }}" class="btn btn-primary">
+                                <a href="/procurements-edit-{{ $procurement->id }}" class="btn btn-primary">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
                                 <form action="/procurements-{{ $procurement->id }}" method="POST" class="inline-block">
@@ -57,8 +43,22 @@
             </div>
         </div>
     </div>
-</div>
+</x-app-layout>
+<h6>Daftar Pengadaan</h6>
+
+<div class="py-12 ">
+    <div class="mx-auto max-w-7xl sm:px-6 lg:px-4 dark:bg-gray-500">
+        <div class="overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-500 sm:rounded-lg ">
+            <h1 class="py-2 mb-2 text-lg font-bold text-center">Daftar Pengadaan</h1>
+            {{-- //buatkan tombol tambah data --}}
+            <div class="flex justify-end px-4 py-3 text-right sm:px-6">
+                <a href="/procurement-create" class="px-4 py-2 font-bold text-white bg-black rounded">Tambah Data</a>
+            </div>
+            <div class="py-12 ">
+
+
+            </div>
 
 
 
-@endsection()
+            @endsection()
