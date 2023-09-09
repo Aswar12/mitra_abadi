@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+<x-app-layout>
 <div class="py-12 ">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-4 dark:bg-gray-500">
         <div class="overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-500 sm:rounded-lg ">
@@ -27,4 +26,4 @@
                         <button type="submit" class="px-4 py-2 text-white bg-black rounded">Simpan Barang</button>
                     </div>
                 </div>
-@endsection
+<x-app-layout>
