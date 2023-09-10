@@ -23,7 +23,7 @@
                         <tbody>
                             @foreach ($procurements as $index => $procurement)
                             <tr class="bg-white dark:bg-gray-100">
-                                <td class="border px-6 py-3 dark:border-black">{{ $index + 1 }}</td>
+                                <td class="border px-6 py-3 dark:border-black">{{ $procurement->id }}</td>
                                 <td class="border px-6 py-3 dark:border-black">{{ $procurement->item->name }}</td>
                                 <td class="border px-6 py-3 dark:border-black">{{ $procurement->order_quantity }}</td>
                                 <td class="border px-6 py-3 dark:border-black">{{ $procurement->total_cost }}</td>
@@ -55,6 +55,9 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <div class="text-center mt-5">
+                        {{ $procurements->links() }}
+                    </div>
                 </div>
             </div>
         </div>
