@@ -17,6 +17,7 @@
                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                             @endforeach
                         </select>
+                    </div>
                     <div class="p-4">
                         <label for="order_quantity">Kuantitas</label>
                         <input type="number" name="order_quantity" id="order_quantity" class="w-full p-2 border rounded shadow" placeholder="Masukkan kuantitas barang">
