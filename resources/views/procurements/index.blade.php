@@ -28,9 +28,9 @@
                                 <td class="border px-6 py-3 dark:border-black">{{ $procurement->order_quantity }}</td>
                                 <td class="border px-6 py-3 dark:border-black">{{ $procurement->total_cost }}</td>
                                 <td class="border px-6 py-3 dark:border-black">{{ $procurement->procurement_date }}</td>
-                                <td class="px-6 py-3 border dark:border-black">
+                                <td class="px-2 py-3 border dark:border-black justify-center">
                                     <a href="/procurements-edit-{{ $procurement->id }}"
-                                        class="flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 mx-1 rounded mb-1">
+                                        class="inline-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 mx-1 rounded mb-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                                             <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                             <path
@@ -42,7 +42,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit"
-                                            class="flex bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 mx-2  rounded mt-1">
+                                            class="inline-flex bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2  rounded mt-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                                                 <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                                 <path

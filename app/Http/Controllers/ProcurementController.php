@@ -16,33 +16,35 @@ class ProcurementController extends Controller
 
     public function create()
     {
-        return view('procurements.create');
+
+        $items = Item::all();
+        return view('procurements.create', compact('items'));
         // Menampilkan form pembuatan pengadaan
     }
 
     public function store(Request $request)
     {
-            $items = Item::find($request->input('id'));
-            
-                // Validasi input
-                $request->validate([
-                    'id'=>'required',
-                    'item_id'=> 'required',
-                    'order_quantity'=> 'required',
-                    'total_cost'=> 'required',
-                    'procurement_date'=> 'required',
-                    // Tambahkan validasi lainnya sesuai kebutuhan
-                ]);
+        $items = Item::find($request->input('id'));
 
-                // Simpan pengadaan baru
-                Procurement::create(
-                    $request->all()
-                    // Simpan atribut lain sesuai kebutuhan
-                );
+        // Validasi input
+        $request->validate([
+            'id' => 'required',
+            'item_id' => 'required',
+            'order_quantity' => 'required',
+            'total_cost' => 'required',
+            'procurement_date' => 'required',
+            // Tambahkan validasi lainnya sesuai kebutuhan
+        ]);
 
-                // Redirect ke halaman yang sesuai setelah penyimpanan berhasil
-                return redirect()->route('procurements.index')
-                    ->with('success', 'Pengadaan berhasil ditambahkan');
+        // Simpan pengadaan baru
+        Procurement::create(
+            $request->all()
+            // Simpan atribut lain sesuai kebutuhan
+        );
+
+        // Redirect ke halaman yang sesuai setelah penyimpanan berhasil
+        return redirect()->route('procurements.index')
+            ->with('success', 'Pengadaan berhasil ditambahkan');
 
         // Proses menyimpan pengadaan baru
     }
