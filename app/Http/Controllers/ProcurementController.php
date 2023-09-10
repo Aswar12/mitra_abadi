@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use Illuminate\Http\Request;
 use App\Models\Procurement;
 
@@ -21,6 +22,8 @@ class ProcurementController extends Controller
 
     public function store(Request $request)
     {
+            $items = Item::find($request->input('id'));
+            
                 // Validasi input
                 $request->validate([
                     'id'=>'required',
