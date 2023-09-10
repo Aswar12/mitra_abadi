@@ -76,11 +76,8 @@
                 <div class="carousel-item active" style="background-image: url('assets-wel/img/slide/slide-1.jpg');">
                     <div class="carousel-container">
                         <div class="carousel-content">
-                            <h2 class="animate__animated animate__fadeInDown">Grow Your Business</h2>
-                            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui
-                                aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
-                                vel. Minus et tempore modi architecto.</p>
+                            <h2 class="animate__animated animate__fadeInDown">PT. Mitra Abadi Distribusindo</h2>
+                            <p class="animate__animated animate__fadeInUp">Jl. Lalu Mesir No.8a, Cakranegara Sel. Baru, Kec. Cakranegara, Kota Mataram, Nusa Tenggara Bar. 83232, Indonesia</p>
                             {{-- <div>
                                 <a href="#about"
                                     class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
@@ -90,14 +87,11 @@
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="carousel-item" style="background-image: url('assets-wel/img/slide/slide-2.jpg');">
+                <div class="carousel-item" style="background-image: url('assets-wel/img/slide/2023-05-12.jpg');">
                     <div class="carousel-container">
                         <div class="carousel-content">
-                            <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-                            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui
-                                aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
-                                vel. Minus et tempore modi architecto.</p>
+                            <h2 class="animate__animated animate__fadeInDown">PT. Mitra Abadi Distribusindo</h2>
+                            <p class="animate__animated animate__fadeInUp">Mitra Abadi Distribusindo terdaftar di Kota Kupang Indonesia. Itu diterbitkan dalam Berita Negara pada 2016 dengan BN 41 TBN 8628. Alamat perusahaan yang terdaftar: Jl. Lalu Mesir No.8A Abian Tubuh, Mataram-Nusa Tenggara Barat.</p>
                             {{-- <div>
                                 <a href="#about"
                                     class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
@@ -107,21 +101,7 @@
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="carousel-item" style="background-image: url('assets-wel/img/slide/slide-3.jpg')">
-                    <div class="carousel-container">
-                        <div class="carousel-content">
-                            <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-                            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui
-                                aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
-                                vel. Minus et tempore modi architecto.</p>
-                            {{-- <div>
-                                <a href="#about"
-                                    class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-                            </div> --}}
-                        </div>
-                    </div>
-                </div>
+                {{--  --}}
 
             </div>
 
