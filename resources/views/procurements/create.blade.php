@@ -18,8 +18,8 @@
                             @endforeach
                         </select>
                     <div class="p-4">
-                        <label for="description">Kuantitas</label>
-                        <textarea type="text" name="description" id="description" class="w-full p-2 border rounded shadow" placeholder="Masukkan deskripsi barang"> </textarea>
+                        <label for="order_quantity">Kuantitas</label>
+                        <input type="number" name="order_quantity" id="order_quantity" class="w-full p-2 border rounded shadow" placeholder="Masukkan kuantitas barang">
                     </div>
                     <div class="p-4">
                         <label for="unit_price">Total Biaya</label>
