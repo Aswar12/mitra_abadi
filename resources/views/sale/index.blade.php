@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('content')
+<x-app-layout>
+
 
 <h6>Penjualan</h6>
 
@@ -37,5 +37,5 @@
 </div>
 
 
+</x-app-layout>
 
-@endsection()

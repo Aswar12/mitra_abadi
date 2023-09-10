@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+<x-app-layout>
 
 <h6>Stock Barang</h6>
 
@@ -33,5 +32,5 @@
 </div>
 
 
+</x-app-layout>
 
-@endsection()
