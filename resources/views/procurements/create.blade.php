@@ -14,7 +14,7 @@
                         <label for="name">Nama barang</label>
                         <select name="name" id="name" class="w-full p-2 border rounded shadow">
                             @foreach ($items as $item)
-                                <option value="{{ $item->name }}">{{ $item->name }}</option>
+                                <option value="{{ $item->id }}">{{ $item->name }}</option>
                             @endforeach
                         </select>
                     <div class="p-4">
