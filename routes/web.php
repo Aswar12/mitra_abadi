@@ -67,6 +67,12 @@ Route::middleware([
     // Dan lain-lain
 
     Route::get('/sale', [SaleController::class, 'index'])->name('sale.index');
+    Route::get('/sales-create', [SaleController::class, 'create'])->name('sales.create');
+    Route::get('/sales-edit-{procurement}', [SaleController::class, 'edit'])->name('sales.edit');
+    Route::put('/sales-update-{procurement}', [SaleController::class, 'update'])->name('sales.update');
+    Route::get('/sales/{id}', [SaleController::class, 'show'])->name('sales.show');
+    Route::post('/sales-store', [SaleController::class, 'store'])->name('procurements.store');
+
 
     Route::get('/stock', [StockController::class, 'index'])->name('stock.index');
 });
