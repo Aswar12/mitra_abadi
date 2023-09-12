@@ -5,6 +5,8 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProcurementController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\StockController;
+use App\Models\Procurement;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,8 +59,11 @@ Route::middleware([
 
     Route::get('/procurements', [ProcurementController::class, 'index'])->name('procurements.index');
     Route::get('/procurements-create', [ProcurementController::class, 'create'])->name('procurements.create');
-    Route::post('/procurements', [ProcurementController::class, 'store'])->name('procurements.store');
+    Route::get('/procurements-edit-{procurement}', [ProcurementController::class, 'edit'])->name('procurements.edit');
+    Route::put('/procurements-update-{procurement}', [ProcurementController::class, 'update'])->name('procurements.update');
     Route::get('/procurements/{id}', [ProcurementController::class, 'show'])->name('procurements.show');
+    Route::post('/procurements-store', [ProcurementController::class, 'store'])->name('procurements.store');
+
     // Dan lain-lain
 
     Route::get('/sale', [SaleController::class, 'index'])->name('sale.index');

@@ -24,22 +24,25 @@ class ProcurementController extends Controller
 
     public function store(Request $request)
     {
-        $items = Item::find($request->input('id'));
+        // $items = Item::find($request->input('id'));
 
         // Validasi input
         $request->validate([
-            'id' => 'required',
             'item_id' => 'required',
             'order_quantity' => 'required',
             'total_cost' => 'required',
             'procurement_date' => 'required',
             // Tambahkan validasi lainnya sesuai kebutuhan
         ]);
-
+        $data = $request->all();
         // Simpan pengadaan baru
         Procurement::create(
-            $request->all()
-            // Simpan atribut lain sesuai kebutuhan
+            [
+                'item_id' => $request->item_id,
+                'order_quantity' => $request->order_quantity,
+                'total_cost' => $request->total_cost,
+                'procurement_date' => $request->procurement_date,
+            ]
         );
 
         // Redirect ke halaman yang sesuai setelah penyimpanan berhasil
@@ -53,6 +56,20 @@ class ProcurementController extends Controller
     {
         $procurement = Procurement::findOrFail($id);
         return view('procurements.show', compact('procurement'));
+    }
+
+    public function edit(Procurement $procurement)
+    {
+        $items = Item::all();
+        return view('procurements.edit', compact('procurement', 'items'));
+    }
+
+    public function update(Request $request, Procurement $procurement)
+    {
+
+        $data = $request->all();
+        $procurement->update($data);
+        return redirect()->route('procurements.index');
     }
 
     // Dan lain-lain
