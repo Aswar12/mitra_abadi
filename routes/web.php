@@ -1,13 +1,10 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProcurementController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\StockController;
-use App\Models\Procurement;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +19,6 @@ use App\Models\Procurement;
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -72,7 +68,6 @@ Route::middleware([
     Route::get('/sales-{id}', [SaleController::class, 'show'])->name('sales.show');
     Route::post('/sales-store', [SaleController::class, 'store'])->name('sales.store');
 
-
     Route::get('/stock', [StockController::class, 'index'])->name('stock.index');
     Route::get('/stocks-create', [StockController::class, 'create'])->name('stocks.create');
 
@@ -89,5 +84,5 @@ Route::middleware([
     Route::put('/stocks-{stock}', [StockController::class, 'update'])->name('stocks.update');
 
     // Menghapus stock
-    Route::delete('/stocks/{stock}', [StockController::class, 'destroy']);
+    Route::delete('/stocks-{stock}', [StockController::class, 'destroy']);
 });
