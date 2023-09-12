@@ -10,10 +10,9 @@ class Sale extends Model
     use HasFactory;
     protected $fillable = [
         'item_id',
-        'quantity',
-        'unit_price',
-        'total_price',
-        'date',
+        'quantity_sold',
+        'selling_price',
+        'sale_date'
     ];
 
     public function item()
