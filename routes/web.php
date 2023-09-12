@@ -66,6 +66,28 @@ Route::middleware([
     // Dan lain-lain
 
     Route::get('/sale', [SaleController::class, 'index'])->name('sale.index');
+    Route::get('/sales-create', [SaleController::class, 'create'])->name('sales.create');
+    Route::get('/sales-edit-{procurement}', [SaleController::class, 'edit'])->name('sales.edit');
+    Route::put('/sales-update-{procurement}', [SaleController::class, 'update'])->name('sales.update');
+    Route::get('/sales/{id}', [SaleController::class, 'show'])->name('sales.show');
+    Route::post('/sales-store', [SaleController::class, 'store'])->name('procurements.store');
+
 
     Route::get('/stock', [StockController::class, 'index'])->name('stock.index');
+    Route::get('/stocks-create', [StockController::class, 'create'])->name('stocks.create');
+
+    // Menyimpan item baru
+    Route::post('/stocks-store', [StockController::class, 'store'])->name('stocks.store');
+
+    // Menampilkan detail item
+    Route::get('/stocks/{stock}', [StockController::class, 'show']);
+
+    // Menampilkan formulir edit stock
+    Route::get('/stocks-edit-{stock}', [StockController::class, 'edit'])->name('stocks.edit');
+
+    // Mengupdate stock
+    Route::put('/stocks-{stock}', [StockController::class, 'update'])->name('stocks.update');
+
+    // Menghapus stock
+    Route::delete('/stocks/{stock}', [StockController::class, 'destroy']);
 });
