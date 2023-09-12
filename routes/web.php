@@ -5,8 +5,6 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProcurementController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\StockController;
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
