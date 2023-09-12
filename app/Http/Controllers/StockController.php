@@ -9,7 +9,7 @@ class StockController extends Controller
 {
     public function index()
     {
-        $stocks = Stock::all();
+        $stocks = Stock::paginate(10);
         return view('stock.index', compact('stocks'));
     }
 }

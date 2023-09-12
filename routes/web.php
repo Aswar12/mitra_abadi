@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProcurementController;
@@ -34,9 +35,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/items', [ItemController::class, 'index'])->name('items.index');
     // Menampilkan formulir tambah item
@@ -75,4 +74,20 @@ Route::middleware([
 
 
     Route::get('/stock', [StockController::class, 'index'])->name('stock.index');
+    Route::get('/stocks-create', [StockController::class, 'create'])->name('stocks.create');
+
+    // Menyimpan item baru
+    Route::post('/stocks-store', [StockController::class, 'store'])->name('stocks.store');
+
+    // Menampilkan detail item
+    Route::get('/stocks/{stock}', [StockController::class, 'show']);
+
+    // Menampilkan formulir edit stock
+    Route::get('/stocks-edit-{stock}', [StockController::class, 'edit'])->name('stocks.edit');
+
+    // Mengupdate stock
+    Route::put('/stocks-{stock}', [StockController::class, 'update'])->name('stocks.update');
+
+    // Menghapus stock
+    Route::delete('/stocks/{stock}', [StockController::class, 'destroy']);
 });
