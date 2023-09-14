@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProcurementController;
@@ -80,7 +81,7 @@ Route::middleware([
     // Menampilkan formulir edit stock
     Route::get('/stocks-edit-{stock}', [StockController::class, 'edit'])->name('stocks.edit');
 
-   
+
  // Mengupdate stock
     Route::put('/stocks-{stock}', [StockController::class, 'update'])->name('stocks.update');
 
