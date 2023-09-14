@@ -3,7 +3,7 @@
         <div class="mx-auto max-w-7xl h-screen sm:px-6 lg:px-4 dark:bg-gray-500">
             <div class="overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-500 sm:rounded-lg  min-h-screen">
                 <h5>Edit Penjualann</h5>
-                <form action="{{ route('sale.update',$sales->id) }}" method="POST">
+                <form action="{{ route('sales.update',$sale->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="grid grid-cols-2 gap-2">
@@ -18,19 +18,19 @@
                         <div class="p-4">
                             <label for="quantity_sold">Jumlah Terjual</label>
                             <input type="number" name="quantity_sold" id="quantity_sold"
-                                value="{{ $sales->quantity_sold }}" class="w-full p-2 border rounded shadow"
+                                value="{{ $sale->quantity_sold }}" class="w-full p-2 border rounded shadow"
                                 placeholder="Masukkan Jumlah Terjual">
                         </div>
                         <div class="p-4">
                             <label for="selling_price">Harga Jual</label>
                             <input type="number" name="selling_price" id="selling_price"
-                                value="{{ $sales->selling_price }}" class="w-full p-2 border rounded shadow"
+                                value="{{ $sale->selling_price }}" class="w-full p-2 border rounded shadow"
                                 placeholder="Masukkan harga barang">
                         </div>
                         <div class="p-4">
                             <label for="sale_date">Tanggal Terjual</label>
                             <input type="date" name="sale_date" id="sale_date"
-                                value="{{ $sales->sale_date }}" class="w-full p-2 border rounded shadow"
+                                value="{{ $sale->sale_date }}" class="w-full p-2 border rounded shadow"
                                 placeholder="Masukkan Permintaan Perpriode barang">
                         </div>
                         <div class="p-4">
