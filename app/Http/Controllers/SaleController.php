@@ -35,13 +35,46 @@ class SaleController extends Controller
         ]);
         $data = $request->all();
         // Simpan pengadaan baru
-        Sale::create($data);
+        Sale::create(
+              [
+                'item_id' => $request->item_id,
+                'quantity_sold' => $request->quantity_sold,
+                'selling_price' => $request->selling_price,
+                'sale_date' => $request->sale_date,
+
+            ]
+        );
 
         // Redirect ke halaman yang sesuai setelah penyimpanan berhasil
-        return redirect()->route('sales.index')
+        return redirect()->route('sale.index')
             ->with('success', 'Pengadaan berhasil ditambahkan');
-
         // Proses menyimpan pengadaan baru
     }
-}
 
+    public function show($id)
+    {
+        $sale = Sale::findOrFail($id);
+        return view('sale.show', compact('sale'));
+    }
+
+    public function edit(Sale $sale)
+    {
+        $items = Item::all();
+        return view('sale.edit', compact('sale', 'items'));
+    }
+
+    public function update(Request $request, Sale $sale)
+    {
+
+        $data = $request->all();
+        $sale->update($data);
+        return redirect()->route('sale.index');
+    }
+    public function destroy(Sale $sale)
+    {
+        $sale->delete();
+        return redirect('/sale')->with('success', 'Sale berhasil dihapus');
+    }
+    
+
+}

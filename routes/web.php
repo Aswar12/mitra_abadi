@@ -80,7 +80,8 @@ Route::middleware([
     // Menampilkan formulir edit stock
     Route::get('/stocks-edit-{stock}', [StockController::class, 'edit'])->name('stocks.edit');
 
-    // Mengupdate stock
+   
+ // Mengupdate stock
     Route::put('/stocks-{stock}', [StockController::class, 'update'])->name('stocks.update');
 
     // Menghapus stock
