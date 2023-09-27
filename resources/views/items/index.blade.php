@@ -20,7 +20,9 @@
                                 <th class="px-6 py-3 border dark:border-black">B.Pemesanan</th>
                                 <th class="px-6 py-3 border dark:border-black">B.Penyimpanan</th>
                                 <th class="px-6 py-3 border dark:border-black">Deskripsi</th>
+                                @if(Auth::user()->roles == 'kepala_gudang')
                                 <th class="px-6 py-3 border dark:border-black">Tindakan</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -34,6 +36,7 @@
                                 <td class="px-6 py-3 border dark:border-black">{{ $item->holding_cost }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ Str::limit($item->description
                                     ,20,'...') }}</td>
+                                @if(Auth::user()->roles == 'kepala_gudang')
                                 <td class="px-6 py-3 border dark:border-black">
                                     <a href="/items-edit-{{ $item->id }}"
                                         class="flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 mx-1 rounded mb-1">
@@ -56,6 +59,7 @@
                                         </button>
                                     </form>
                                 </td>
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>
