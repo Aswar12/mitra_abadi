@@ -19,7 +19,9 @@
                                 <th class="px-6 py-3 border dark:border-black">Jumlah Terjual</th>
                                 <th class="px-6 py-3 border dark:border-black">Harga Jual</th>
                                 <th class="px-6 py-3 border dark:border-black">Tanggal Penjualan</th>
+                                @if (Auth::user()->roles == 'kepala_gudang')
                                 <th class="px-6 py-3 border dark:border-black">Tindakan</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -30,6 +32,7 @@
                                 <td class="px-6 py-3 border dark:border-black">{{ $sale->quantity_sold }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $sale->selling_price }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $sale->sale_date }}</td>
+                                @if (Auth::user()->roles == 'kepala_gudang')
                                 <td class="justify-center px-2 py-3 border dark:border-black">
                                     <a href="/sales-edit-{{ $sale->id }}"
                                         class="inline-flex px-2 py-2 mx-1 mb-1 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
@@ -53,6 +56,7 @@
                                         </button>
                                     </form>
                                 </td>
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>

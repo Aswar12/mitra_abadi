@@ -19,7 +19,9 @@
                                 <th class="px-6 py-3 border dark:border-black">Kuantitas</th>
                                 <th class="px-6 py-3 border dark:border-black">Total Biaya</th>
                                 <th class="px-6 py-3 border dark:border-black">Tanggal Pengadaan</th>
+                                 @if (Auth::user()->roles == 'kepala_gudang')
                                 <th class="px-6 py-3 border dark:border-black">Tindakan</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -30,6 +32,7 @@
                                 <td class="px-6 py-3 border dark:border-black">{{ $procurement->order_quantity }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $procurement->total_cost }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $procurement->procurement_date }}</td>
+                                @if (Auth::user()->roles == 'kepala_gudang')
                                 <td class="justify-center px-2 py-3 border dark:border-black">
                                     <a href="/procurements-edit-{{ $procurement->id }}"
                                         class="inline-flex px-2 py-2 mx-1 mb-1 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
@@ -53,6 +56,7 @@
                                         </button>
                                     </form>
                                 </td>
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>

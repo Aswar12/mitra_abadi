@@ -17,7 +17,9 @@
                             <th class="px-1 py-1 border dark:border-black">No</th>
                             <th class="px-1 py-1 border dark:border-black">Nama Barang</th>
                             <th class="px-1 py-1 border dark:border-black">Jumlah Stok</th>
+                            @if (Auth::user()->roles == 'kepala_gudang')
                             <th class="px-1 py-1 border dark:border-black">Tindakan</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -26,6 +28,7 @@
                             <td class="px-6 py-3 border dark:border-black">{{ $index + 1 }}</td>
                             <td class="px-6 py-3 border dark:border-black">{{ $stock->item->name }}</td>
                             <td class="px-6 py-3 border dark:border-black">{{ $stock->quantity }}</td>
+                            @if (Auth::user()->roles == 'kepala_gudang')
                             <td class="justify-center px-2 py-3 border dark:border-black">
                                 <a href="/stocks-edit-{{ $stock->id }}"
                                     class="inline-flex px-2 py-2 mx-1 mb-1 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
@@ -49,6 +52,7 @@
                                     </button>
                                 </form>
                             </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>
