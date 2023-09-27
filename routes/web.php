@@ -6,7 +6,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProcurementController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\StockController;
-use App\Http\Controllers\DashboardController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -83,7 +83,7 @@ Route::middleware([
     Route::get('/stocks-edit-{stock}', [StockController::class, 'edit'])->name('stocks.edit');
 
 
- // Mengupdate stock
+    // Mengupdate stock
     Route::put('/stocks-{stock}', [StockController::class, 'update'])->name('stocks.update');
 
     // Menghapus stock
