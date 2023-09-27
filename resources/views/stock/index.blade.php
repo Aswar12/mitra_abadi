@@ -4,10 +4,12 @@
             <div class="overflow-hidden bg-white rounded-lg shadow-xl dark:bg-white sm:rounded-lg ">
                 <h1 class="py-2 mb-2 text-lg font-bold text-center">Daftar Stock</h1>
                 {{-- //buatkan tombol tambah data --}}
+                @if(Auth::user()->roles == 'kepala_gudang')
                 <div class="flex justify-end px-4 py-3 text-right sm:px-6">
                     <a href="/stocks-create" class="px-4 py-2 font-bold text-white bg-black rounded">Tambah
                         Data</a>
                 </div>
+                @endif
                 <div class="overflow-x-auto dark:bg-gray-100">
                     <table class="min-w-full border rounded-lg dark:border-gray-200">
                         <thead>
