@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EoqController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProcurementController;
@@ -53,6 +54,9 @@ Route::middleware([
 
     // Menghapus item
     Route::delete('/items/{item}', [ItemController::class, 'destroy']);
+
+    // eoq
+    Route::get('/eoq', [EoqController::class, 'index'])->name('eoq.index');
 
     Route::get('/procurements', [ProcurementController::class, 'index'])->name('procurements.index');
     Route::get('/procurements-create', [ProcurementController::class, 'create'])->name('procurements.create');

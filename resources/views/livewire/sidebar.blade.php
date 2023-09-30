@@ -1,6 +1,6 @@
 <div
-    class=" bg-gray-800  h-full mt-16 px-4 w-48 flex left-0 top-0 text-white border-b border-gray-100 dark:border-gray-700 ">
-    <ul class="space-y-4 h-auto pt-8 ">
+    class="top-0 left-0 flex w-48 h-full px-4 mt-16 text-white bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+    <ul class="h-auto pt-8 space-y-4 ">
         <!-- Menu Navigasi -->
         @if(Auth::user()->roles == 'kepala_cabang')
         <li>
@@ -17,6 +17,27 @@
         </li>
         @endif
 
+         <li>
+            <a href="{{ route('eoq.index') }}"
+                class="flex items-center p-2 space-x-2 text-white rounded-lg hover:bg-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
+                    <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <style>
+                        svg {
+                            fill: #ffffff
+                        }
+                    </style>
+                    <path
+                        d="M0 488V171.3c0-26.2 15.9-49.7 40.2-59.4L308.1 4.8c7.6-3.1 16.1-3.1 23.8 0L599.8 111.9c24.3 9.7 40.2 33.3 40.2 59.4V488c0 13.3-10.7 24-24 24H568c-13.3 0-24-10.7-24-24V224c0-17.7-14.3-32-32-32H128c-17.7 0-32 14.3-32 32V488c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zm488 24l-336 0c-13.3 0-24-10.7-24-24V432H512l0 56c0 13.3-10.7 24-24 24zM128 400V336H512v64H128zm0-96V224H512l0 80H128z" />
+                </svg>
+                <!-- Icon Items -->
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 2c4.4183 0 8 3.5817 8 8 0 1.448 0 6-8 12-8-6-8-10.552-8-12 0-4.4183 3.5817-8 8-8z">
+                </path>
+                </svg>
+                <span>Perhitungan EOQ</span>
+            </a>
+        </li>
 
         <li>
             <a href="{{ route('items.index') }}"
