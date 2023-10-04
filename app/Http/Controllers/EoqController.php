@@ -6,9 +6,9 @@ use App\Models\Item;
 
 class EOQController extends Controller
 {
-    public function calculateEOQ($demand, $holding_cost, $ordering_cost)
+    public function calculateEOQ($demand_rate, $holding_cost, $ordering_cost)
     {
-        $eoq = sqrt((2 * $demand * $ordering_cost) / $holding_cost);
+        $eoq = sqrt((2 * $demand_rate * $ordering_cost) / $holding_cost);
 
         return $eoq;
     }
