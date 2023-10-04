@@ -16,6 +16,10 @@
                                 <th class="px-6 py-3 border dark:border-black">Perhitungan EOQ</th>
                         </thead>
                         <tbody>
+                            @php
+                                $pakedia = \App\Models\Item::all();
+                            @endphp
+
                             @foreach ($pakedia as $item)
                                 <tr class="bg-white dark:bg-gray-100">
                                     <td class="px-6 py-3 border dark:border-black">{{ $item->id }}</td>
