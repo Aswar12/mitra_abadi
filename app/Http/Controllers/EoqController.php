@@ -14,13 +14,11 @@ class EOQController extends Controller
     }
     public function index()
     {
-        $item_id = 2;
-        $item = Item::find($item_id); // Ganti $item_id dengan ID item yang ingin dihitung EOQ-nya
-
+        $pakedia = Item::first()->id;
+        $item = Item::find($pakedia); // Ganti $item_id dengan ID item yang ingin dihitung EOQ-nya
         $demand_rate = $item->demand_rate;
         $holding_cost = $item->holding_cost;
         $ordering_cost = $item->ordering_cost;
-
         $eoq = $this->calculateEOQ($demand_rate, $holding_cost, $ordering_cost);
 
         return view('eoq.index', compact('eoq'));
