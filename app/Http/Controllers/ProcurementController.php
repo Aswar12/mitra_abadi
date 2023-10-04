@@ -32,6 +32,7 @@ class ProcurementController extends Controller
             'order_quantity' => 'required',
             'total_cost' => 'required',
             'procurement_date' => 'required',
+            'leadtime' => 'required',
             // Tambahkan validasi lainnya sesuai kebutuhan
         ]);
         $data = $request->all();
@@ -42,6 +43,7 @@ class ProcurementController extends Controller
                 'order_quantity' => $request->order_quantity,
                 'total_cost' => $request->total_cost,
                 'procurement_date' => $request->procurement_date,
+                'leadtime' => $request->leadtime,
             ]
         );
 

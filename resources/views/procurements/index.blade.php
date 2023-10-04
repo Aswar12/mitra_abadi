@@ -19,6 +19,7 @@
                                 <th class="px-6 py-3 border dark:border-black">Kuantitas</th>
                                 <th class="px-6 py-3 border dark:border-black">Total Biaya</th>
                                 <th class="px-6 py-3 border dark:border-black">Tanggal Pengadaan</th>
+                                <th class="px-6 py-3 border dark:border-black">Lama Pengiriman</th>
                                  @if (Auth::user()->roles == 'kepala_gudang')
                                 <th class="px-6 py-3 border dark:border-black">Tindakan</th>
                                 @endif
@@ -32,6 +33,7 @@
                                 <td class="px-6 py-3 border dark:border-black">{{ $procurement->order_quantity }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $procurement->total_cost }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $procurement->procurement_date }}</td>
+                                <td class="px-6 py-3 border dark:border-black">{{ $procurement->leadtime}}</td>
                                 @if (Auth::user()->roles == 'kepala_gudang')
                                 <td class="justify-center px-2 py-3 border dark:border-black">
                                     <a href="/procurements-edit-{{ $procurement->id }}"

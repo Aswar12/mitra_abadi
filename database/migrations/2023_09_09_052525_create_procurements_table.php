@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('order_quantity');
             $table->decimal('total_cost', 10, 2);
             $table->date('procurement_date');
+            $table->integer('leadtime');
             $table->timestamps();
         });
     }

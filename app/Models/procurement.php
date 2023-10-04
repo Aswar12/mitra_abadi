@@ -14,6 +14,7 @@ class Procurement extends Model
         'order_quantity',
         'total_cost',
         'procurement_date',
+        'leadtime',
         'created_at',
         'updated_at'
     ];

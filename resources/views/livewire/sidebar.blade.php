@@ -35,7 +35,7 @@
                     d="M12 2c4.4183 0 8 3.5817 8 8 0 1.448 0 6-8 12-8-6-8-10.552-8-12 0-4.4183 3.5817-8 8-8z">
                 </path>
                 </svg>
-                <span>Perhitungan EOQ</span>
+                <span>Perhitungan Metode</span>
             </a>
         </li>
 
