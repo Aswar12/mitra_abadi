@@ -60,7 +60,7 @@ class EOQController extends Controller
                 $leadtime = $procurement->leadtime;
 
                 $rop = $demand_rate * $leadtime;
-                $ropResults[$procurement->id] = $rop;
+                $ropResults[$procurement->item->name] = $rop;
             } else {
                 $ropResults[$procurement->id] = "Item tidak ditemukan.";
             }

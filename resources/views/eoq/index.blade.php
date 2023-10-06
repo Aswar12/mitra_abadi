@@ -30,11 +30,14 @@
                             <table class="min-w-full border rounded-lg dark:border-gray-200">
                                 <thead>
                                     <tr class="bg-gray-100 rounded-lg dark:bg-gray-100 ">
+                                         <th class="px-1 py-1 border dark:border-black">Item</th>
                                         <th class="px-1 py-1 border dark:border-black">Reorder Point</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($ropResults as $procurementName => $rop)
+                                        <td class="px-6 py-3 border dark:border-black">{{ $procurementName }}</td>
+        
                                     <td class="px-6 py-3 border dark:border-black">{{ $rop }}</td>
                                     </tr>
                                     @endforeach
