@@ -14,10 +14,10 @@
                             </thead>
                             <tbody>
                                 @foreach ($eoqResults as $itemName => $eoq)
-                                    <tr class="bg-white dark:bg-gray-100">
-                                        <td class="px-6 py-3 border dark:border-black">{{ $itemName }}</td>
-                                        <td class="px-6 py-3 border dark:border-black">{{ $eoq }}</td>
-                                @endforeach
+                                <tr class="bg-white dark:bg-gray-100">
+                                    <td class="px-6 py-3 border dark:border-black">{{ $itemName }}</td>
+                                    <td class="px-6 py-3 border dark:border-black">{{ $eoq }}</td>
+                                    @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -35,8 +35,8 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($ropResults as $procurementName => $rop)
-                                        <td class="px-6 py-3 border dark:border-black">{{ $rop }}</td>
-                                        </tr>
+                                    <td class="px-6 py-3 border dark:border-black">{{ $rop }}</td>
+                                    </tr>
                                     @endforeach
 
                                 </tbody>
