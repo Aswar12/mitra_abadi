@@ -1,5 +1,5 @@
-<div
-    class="top-0 left-0 flex w-48 h-full px-4 mt-16 text-white bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+
+<div class="top-0 left-0 flex w-48 h-full min-h-[40rem] px-4 mt-16 text-white bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     <ul class="h-auto pt-8 space-y-4 ">
         <!-- Menu Navigasi -->
         @if(Auth::user()->roles == 'kepala_cabang')

@@ -57,6 +57,9 @@ Route::middleware([
 
     // eoq
     Route::get('/eoq', [EoqController::class, 'index'])->name('eoq.index');
+    Route::get('/eoq/search', [EoqController::class, 'search'])->name('eoq.search');
+
+
 
     Route::get('/procurements', [ProcurementController::class, 'index'])->name('procurements.index');
     Route::get('/procurements-create', [ProcurementController::class, 'create'])->name('procurements.create');

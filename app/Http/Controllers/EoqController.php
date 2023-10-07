@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use App\Models\Procurement;
+use Illuminate\Http\Request;
 
 class EOQController extends Controller
 {
@@ -42,30 +43,66 @@ class EOQController extends Controller
 
 
 
-    public function index()
-    {
-        $items = Item::all();
-        $procurements = Procurement::all();
-        $ropResults = [];
-        $eoqResults = [];
+    // public function index()
+    // {
+    //     $items = Item::paginate(10);
+    //     $procurements = Procurement::paginate(10); 
+    //     $ropResults = [];
+    //     $eoqResults = [];
 
-        foreach ($items as $item) {
-            $eoq = $this->calculateEOQ($item->id);
-            $eoqResults[$item->name] = $eoq;
-        }
+    //     foreach ($items as $item) {
+    //         $eoq = $this->calculateEOQ($item->id);
+    //         $eoqResults[$item->name] = $eoq;
+    //     }
 
-        foreach ($procurements as $procurement) {
-            if ($procurement->item) {
-                $demand_rate = $procurement->item->demand_rate;
-                $leadtime = $procurement->leadtime;
+    //     foreach ($procurements as $procurement) {
+    //         if ($procurement->item) {
+    //             $demand_rate = $procurement->item->demand_rate;
+    //             $leadtime = $procurement->leadtime;
 
-                $rop = $demand_rate * $leadtime;
-                $ropResults[$procurement->item->name] = $rop;
-            } else {
-                $ropResults[$procurement->id] = "Item tidak ditemukan.";
-            }
-        }
+    //             $rop = $demand_rate * $leadtime;
+    //             $ropResults[$procurement->item->name] = $rop;
+    //         } else {
+    //             $ropResults[$procurement->id] = "Item tidak ditemukan.";
+    //         }
+    //     }
 
-        return view('eoq.index', compact('items', 'procurements', 'ropResults', 'eoqResults'));
+    //     return view('eoq.index', compact('items', 'procurements', 'ropResults', 'eoqResults'));
+    // }
+
+    public function index(Request $request)
+{
+    $keyword = $request->input('keyword');
+
+    $items = Item::where('name', 'like', "%$keyword%")->paginate(10);
+    $ropResults = [];
+    $eoqResults = [];
+
+    foreach ($items as $item) {
+        $eoq = $this->calculateEOQ($item->id);
+        $rop = $this->calculateROP($item->id);
+
+        $eoqResults[$item->name] = $eoq;
+        $ropResults[$item->id] = $rop;
     }
+
+    return view('eoq.index', compact('items', 'ropResults', 'eoqResults'));
+}
+
+
+    public function search(Request $request)
+{
+    $keyword = $request->input('keyword');
+
+    $items = Item::where('name', 'LIKE', "%$keyword%")->paginate(10);
+   
+    $ropResults = [];
+    $eoqResults = [];
+
+    // ...
+
+    return view('eoq.index', compact('items',  'ropResults', 'eoqResults'));
+}
+
+
 }
