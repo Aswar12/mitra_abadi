@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->decimal('unit_price', 10, 2);
+            $table->integer('unit_price', 10, 2);
             $table->integer('demand_rate'); // permintaan rata-rata per periode
-            $table->decimal('ordering_cost', 10, 2); // biaya pemesanan per pesanan
-            $table->decimal('holding_cost', 10, 2); // biaya penyimpanan per unit per periode
+            $table->integer('ordering_cost', 10, 2); // biaya pemesanan per pesanan
+            $table->integer('holding_cost', 10, 2); // biaya penyimpanan per unit per periode
             $table->timestamps();
         });
     }
