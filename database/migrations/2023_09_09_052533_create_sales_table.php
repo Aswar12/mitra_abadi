@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('item_id');
             $table->foreign('item_id')->references('id')->on('items');
             $table->integer('quantity_sold');
-            $table->integer('selling_price', 10, 2);
+            $table->integer('selling_price');
             $table->date('sale_date');
             $table->timestamps();
         });

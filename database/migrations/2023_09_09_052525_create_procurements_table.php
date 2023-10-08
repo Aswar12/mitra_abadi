@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('item_id');
             $table->foreign('item_id')->references('id')->on('items');
             $table->integer('order_quantity');
-            $table->integer('total_cost', 10, 2);
+            $table->integer('total_cost');
             $table->date('procurement_date');
             $table->integer('leadtime');
             $table->timestamps();
