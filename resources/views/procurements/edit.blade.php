@@ -25,7 +25,7 @@
                             <label for="total_cost">Total Biaya</label>
                             <input type="number" name="total_cost" id="total_cost"
                                 value="{{ $procurement->total_cost }}" class="w-full p-2 border rounded shadow"
-                                placeholder="Masukkan harga barang">
+                                placeholder="Masukkan total biaya">
                         </div>
                         <div class="p-4">
                             <label for="procurement_date">Tanggal Pengadaan</label>
