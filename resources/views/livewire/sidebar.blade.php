@@ -15,9 +15,7 @@
                 <span>Dashboard</span>
             </a>
         </li>
-        @endif
-
-         <li>
+        <li>
             <a href="{{ route('eoq.index') }}"
                 class="flex items-center p-2 space-x-2 text-white rounded-lg hover:bg-gray-700">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
@@ -38,6 +36,8 @@
                 <span>Perhitungan Metode</span>
             </a>
         </li>
+        @endif
+
 
         <li>
             <a href="{{ route('items.index') }}"
