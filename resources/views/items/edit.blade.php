@@ -40,5 +40,5 @@
                     <button type="submit" class="px-4 py-2 font-bold text-white bg-black rounded">Update data</button>
                 </div>
                 <p></p>
-<x-app-layout>
+</x-app-layout>
     
