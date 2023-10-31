@@ -39,7 +39,7 @@
                                 value="{{ $item->holding_cost }}">
                         </div>
                         <div class="p-2">
-                            <label for="unit">Biaya Penyimpanan</label>
+                            <label for="unit">Satuan</label>
                             <input type="text" class="w-full p-2 border rounded shadow" name="unit"
                                 value="{{ $item->unit }}">
                         </div>
