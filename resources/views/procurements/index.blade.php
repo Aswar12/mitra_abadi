@@ -20,7 +20,7 @@
                                 <th class="px-6 py-3 border dark:border-black">Total Biaya</th>
                                 <th class="px-6 py-3 border dark:border-black">Tanggal Pengadaan</th>
                                 <th class="px-6 py-3 border dark:border-black">Lama Pengiriman</th>
-                                 @if (Auth::user()->roles == 'kepala_gudang')
+                                @if (Auth::user()->roles == 'kepala_gudang')
                                 <th class="px-6 py-3 border dark:border-black">Tindakan</th>
                                 @endif
                             </tr>
@@ -30,7 +30,8 @@
                             <tr class="bg-white dark:bg-gray-100">
                                 <td class="px-6 py-3 border dark:border-black">{{ $index+1 }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $procurement->item->name }}</td>
-                                <td class="px-6 py-3 border dark:border-black">{{ $procurement->order_quantity }}</td>
+                                <td class="px-6 py-3 border dark:border-black">{{ $procurement->order_quantity }} {{
+                                    $procurement->item->unit }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $procurement->total_cost }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $procurement->procurement_date }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $procurement->leadtime}}</td>
@@ -71,9 +72,13 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <script>
     function confirmDelete() {
         return confirm('Apakah Anda yakin ingin menghapus data ini?');
         }
         </script>
 </x-app-layout>
+=======
+</x-app-layout>
+>>>>>>> 8677ef2361aa6c9b828ac83236ea789d1ab9d5e2

@@ -40,6 +40,12 @@
                                 placeholder="Masukkan Biaya Penyimpanan barang">
                         </div>
                         <div class="p-4">
+                            <label for="unit">Satuan</label>
+                            <input type="text" name="unit" id="unit"
+                                class="w-full p-2 border rounded shadow"
+                                placeholder="Masukkan tipe Satuan barang">
+                        </div>
+                        <div class="p-4">
                             <button type="submit" class="px-4 py-2 text-white bg-black rounded">Simpan Barang</button>
                         </div>
                     </div>

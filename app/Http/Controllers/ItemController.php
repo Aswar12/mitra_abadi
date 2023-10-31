@@ -69,6 +69,7 @@ class ItemController extends Controller
             'demand_rate' => 'required|numeric',
             'ordering_cost' => 'required|numeric',
             'holding_cost' => 'required|numeric',
+
         ]);
 
         // Update item
