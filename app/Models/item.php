@@ -17,6 +17,7 @@ class Item extends Model
         'demand_rate',
         'ordering_cost',
         'holding_cost',
+        'unit',
     ];
 
 
