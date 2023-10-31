@@ -27,7 +27,7 @@
                         <tbody>
                             @foreach ($sales as $index => $sale)
                             <tr class="bg-white dark:bg-gray-100">
-                                <td class="px-6 py-3 border dark:border-black">{{ $sale->id }}</td>
+                                <td class="px-6 py-3 border dark:border-black">{{ $index+1 }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $sale->item->name }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $sale->quantity_sold }}</td>
                                 <td class="px-6 py-3 border dark:border-black">{{ $sale->selling_price }}</td>
@@ -43,6 +43,7 @@
                                         </svg><span class="mx-1">Edit</span>
                                     </a>
                                     <form action="/sales/{{ $sale->id }}" method="POST"
+                                    onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')"
                                         class="inline-block">
                                         @csrf
                                         @method('DELETE')
@@ -68,4 +69,9 @@
             </div>
         </div>
     </div>
+    <script>
+    function confirmDelete() {
+        return confirm('Apakah Anda yakin ingin menghapus data ini?');
+        }
+        </script>
 </x-app-layout>

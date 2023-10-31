@@ -73,6 +73,11 @@ class ProcurementController extends Controller
         $procurement->update($data);
         return redirect()->route('procurements.index');
     }
+    public function destroy(Procurement $procurement)
+    {
+        $procurement->delete();
+        return redirect('/procurements')->with('success', 'Procurement berhasil dihapus');
+    }
 
     // Dan lain-lain
 }

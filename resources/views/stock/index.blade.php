@@ -39,6 +39,7 @@
                                     </svg><span class="mx-1">Edit</span>
                                 </a>
                                 <form action="/stocks/{{ $stock->id }}" method="POST"
+                                onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')"
                                     class="inline-block">
                                     @csrf
                                     @method('DELETE')
@@ -64,4 +65,9 @@
         </div>
     </div>
 </div>
+<script>
+    function confirmDelete() {
+        return confirm('Apakah Anda yakin ingin menghapus data ini?');
+        }
+        </script>
 </x-app-layout>

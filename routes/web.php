@@ -67,6 +67,7 @@ Route::middleware([
     Route::put('/procurements-update-{procurement}', [ProcurementController::class, 'update'])->name('procurements.update');
     Route::get('/procurements/{id}', [ProcurementController::class, 'show'])->name('procurements.show');
     Route::post('/procurements-store', [ProcurementController::class, 'store'])->name('procurements.store');
+    Route::delete('/procurements/{procurement}', [ProcurementController::class, 'destroy']);
 
     // Dan lain-lain
 
@@ -76,6 +77,7 @@ Route::middleware([
     Route::put('/sales-update-{sale}', [SaleController::class, 'update'])->name('sales.update');
     Route::get('/sales-{id}', [SaleController::class, 'show'])->name('sales.show');
     Route::post('/sales-store', [SaleController::class, 'store'])->name('sales.store');
+    Route::delete('/sales/{sale}', [SaleController::class, 'destroy']);
 
     Route::get('/stock', [StockController::class, 'index'])->name('stock.index');
     Route::get('/stocks-create', [StockController::class, 'create'])->name('stocks.create');
@@ -94,5 +96,5 @@ Route::middleware([
     Route::put('/stocks-{stock}', [StockController::class, 'update'])->name('stocks.update');
 
     // Menghapus stock
-    Route::delete('/stocks-{stock}', [StockController::class, 'destroy']);
+    Route::delete('/stocks/{stock}', [StockController::class, 'destroy']);
 });
