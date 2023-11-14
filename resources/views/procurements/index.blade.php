@@ -72,13 +72,11 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
     <script>
     function confirmDelete() {
         return confirm('Apakah Anda yakin ingin menghapus data ini?');
         }
         </script>
 </x-app-layout>
-=======
-</x-app-layout>
->>>>>>> 8677ef2361aa6c9b828ac83236ea789d1ab9d5e2
+
+
